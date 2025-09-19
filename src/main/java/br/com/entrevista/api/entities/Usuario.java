@@ -2,16 +2,19 @@ package br.com.entrevista.api.entities;
 
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.*;
 import java.util.*;
 
 @Entity
 @Table(name = "usuarios")
+@Data
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false, length = 80)
     private String primeiroNome;
